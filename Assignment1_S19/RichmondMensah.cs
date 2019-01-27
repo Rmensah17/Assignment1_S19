@@ -11,12 +11,13 @@ namespace Assignment1_S19
         static void Main(string[] args)
         {
             /*
-             * This application contains a set of Methods that a user can call at run time. The available methods are printPrimeNumbers,getSeriesResult,decimalToBinary
-             * binaryToDecimal,printTriangle,computeFrequency
-             * */
-            //Excercise Methods start from line 204
-            //Self Reflections start at line 165
-            //Name: Richmond Mensah
+            This application contains a set of Methods that a user can call at run time. The available methods are printPrimeNumbers,getSeriesResult,decimalToBinary
+             binaryToDecimal,printTriangle,computeFrequency
+             
+            Excercise Methods start from line 204
+            Self Reflections start at line 165
+            Name: Richmond Mensah
+            */
 
             //Call the main menu method to display the available methods to the user
             MainMenu();
