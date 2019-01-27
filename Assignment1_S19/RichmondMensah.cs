@@ -11,28 +11,29 @@ namespace Assignment1_S19
         static void Main(string[] args)
         {
             /*
-            This application contains a set of Methods that a user can call at run time. The available methods are printPrimeNumbers,getSeriesResult,decimalToBinary
-             binaryToDecimal,printTriangle,computeFrequency
+            This application contains a set of Methods that a user can call at run time. The available methods are printPrimeNumbers,getSeriesResult,decimalToBinary,
+             binaryToDecimal,printTriangle,and computeFrequency. An Additional method was made to contain the console properties and menu of methods for the user
+             to select from.
              
-            Excercise Methods start from line 204
-            Self Reflections start at line 165
-            Name: Richmond Mensah
+            Excercise Methods start from line 231
+            Self Reflections start at line 183
+            Credits: Richmond Mensah
             */
 
             //Call the main menu method to display the available methods to the user
             MainMenu();
             
-            //dont close the console until the user click the X
+            //dont close the console until the user closes the window or presses the Q key on the keyboard
             while (true) 
             {
                 try
                 {
-                    //variable for asthetics only
+                    //variable to draw lines for asthetics only. Reason I created this variable was because I used it multiple times and didnt want to keep drawing it
                     string consolelines = "---------------------------------------------";
 
-                    //Determine which method to call based on the user input (The Key the user pressed)
+                    //Determine which method to call based on the user input (The Key the user pressed on the Keyboard)
                     switch (Console.ReadKey().Key)
-                    {   //printPrimeNumbers
+                    {   //If the user press P, then call the printPrimeNumbers  method
                         case ConsoleKey.P:
                             Console.WriteLine("\n\nWelcome to the Print Prime Number Methods. Let's Begin:");
                             Console.Write(consolelines + "\n");
@@ -50,11 +51,12 @@ namespace Assignment1_S19
                             Console.Write("\n"+consolelines +"\n");
                             Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
                             break;
-                        //getSeriesResult
+
+                        //If the user presses S then call the getSeriesResult method.
                         case ConsoleKey.S:
                             Console.WriteLine("\n\n Welcome to the Get Series Method!!!");
                             Console.Write(consolelines + "\n");
-                            //Get input from the user for the series to calculate
+                            //Get input from the user for the series to calculate its factorial
                             Console.Write("Enter a number to compute the series: ");
                             //Store the value to the n1 variable
                             long n1 = long.Parse(Console.ReadLine());
@@ -65,7 +67,8 @@ namespace Assignment1_S19
                             Console.Write(consolelines + "\n");
                             Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
                             break;
-                        //decimalToBinary
+
+                        //If the user presses the D then call the decimalToBinary method
                         case ConsoleKey.D:
                             Console.WriteLine("\n\n Welcome to the Decimal to Binary Method!!!");
                             Console.Write(consolelines + "\n");
@@ -80,7 +83,8 @@ namespace Assignment1_S19
                             Console.Write(consolelines + "\n");
                             Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
                             break;
-                        //binaryToDecimal
+
+                        //if the user presses the B button then call the binaryToDecimal method
                         case ConsoleKey.B:
                             Console.WriteLine("\n\n Welcome to the Binary to Decimal Method!!!");
                             Console.Write(consolelines + "\n");
@@ -95,7 +99,8 @@ namespace Assignment1_S19
                             Console.Write(consolelines + "\n");
                             Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
                             break;
-                        //printTriangle
+
+                        //if the user presses the T button then call the printTriangle method
                         case ConsoleKey.T:
                             Console.WriteLine("\n\n Welcome to the Print Triangle Method!!!");
                             Console.Write(consolelines + "\n");
@@ -108,12 +113,13 @@ namespace Assignment1_S19
                             Console.Write(consolelines + "\n");
                             Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
                             break;
-                        //computeFrequency
+
+                        //if the user presses the F button then call the computeFrequency method
                         case ConsoleKey.F:
                             Console.WriteLine("\n\n Welcome to the Frequency Computer Method!!!");
                             Console.Write(consolelines + "\n");
                             //the array to show
-                            int[] arr = new int[] { 1, 2, 3, 2, 2, 1, 3, 2, };
+                            int[] arr = new int[] { 1, 2, 3, 2, 2, 2, 3, 2, };
                             //show the user the array and frequency
                             Console.Write($"The frequency will be based on the array list of: ");
                             //display the content of the array to the user prior to executing the triangle method
@@ -122,7 +128,7 @@ namespace Assignment1_S19
                                 
                                 Console.Write($"{i} ");
                             }
-                            //Generate the headers
+                            //Generate the headers in a tab form
                             Console.WriteLine("\n\nNumber \tFrequency");
                             //call the triangle method and draw to the user
                             computeFrequency(arr);
@@ -130,12 +136,13 @@ namespace Assignment1_S19
                             Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
                             break;
 
-                        //Go back to Main Menu and clear screen
+                        //Go back to Main Menu and clear screen if the user presses the C key
                         case ConsoleKey.C:
                             //call the main menu method
                             MainMenu();
                             break;
-                        //close the app
+                        
+                            //close the app if the user presses the Q key
                         case ConsoleKey.Q:
                             //display a message to the user that the app is closing
                             Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -145,7 +152,8 @@ namespace Assignment1_S19
                             //close the app
                             Environment.Exit(0);
                             break;
-                        //tell the user the option entered is not available
+                        
+                            //tell the user the option entered is not available if none of the above keyboard keys are pressed
                         default:
                             Console.Write("\nOption not available yet. Enter Another Selection: ");
                             break;
@@ -173,7 +181,22 @@ namespace Assignment1_S19
             {
                 /*
                  * Self Reflections:
-                 * self reflections: honestly, I didnt find the assignment to be challenging in terms of coding but found it challenging on how to do the calculations, especcially on the binary to decimal conversion
+                 * Rating (1 - 5): 5
+                 * Struggles:
+                 * While some of the method computations were stragihtforward, others were a little challenging.
+                 * My initial struggle was figuring out what logic I needed to use to do the computations. So I had to write some pseudo codes to simplify how I was going to program some of the calculations,
+                 * especially the Binary to decimal, decimal to binary conversions, and the Triangle.
+                 * 
+                 * What I learned :
+                 * I found the assignment interesting and even started creating other console apps. The Method I liked the most was the Printing of the Triangle . It was amazing how the output looked.
+                 * I also learned a lot about the IDE and developed some familiarity with setting console properties.
+                 * I mostly used C# in my leisure to create Windows Form Application and never thought of creating console apps, but I found it straightforward to create console apps and also started translating some of my GUI apps into console apps.
+                 * 
+                 * This is the first time I published code to GitHub and after pushing this code, I was able to push an SSIS package code I have been working on as a leisure project to GitHub.
+                 * 
+                 * Recommendations:
+                 * I know this might be the first assignment, but instead of giving a specific set of functions to create, I think the students should be given the option to come up with an idea and create a function off that.
+                 * That way it engages the student to do some critical thinking to decide what they can do.
                
                  * 
                  */
@@ -189,12 +212,13 @@ namespace Assignment1_S19
             Console.Clear();
             Console.Title = "Spring 2019: Assignment One"; //Set a title for the console
             Console.Write("==============================================");
+            //general information and a Today's Date that displays the current date and time
             Console.Write("\nSpring 2019 Assignment 1 Solution.\nProgrammed By: \t\tRichmond Mensah\nDate Programmed: \t1/21/2019 10:44:45 AM\nDue Date: \t\t1/27/2019 23:59:59 PM\nToday's Date: \t\t{0}\n", DateTime.Now);
             Console.Write("==============================================\n");
 
-            //Assign the values to Menu Options
+            //Variable to contain the caption for the Method values stored in the array below
             Console.Write("\t\tOptions: \n");
-            //Create an array to store the values
+            //Create an array to store the names of the methods in this application
             String[] AvailbleOptions = new string[6];
             AvailbleOptions[0] = "P. printPrimeNumbers";
             AvailbleOptions[1] = "S. getSeriesResult";
@@ -203,24 +227,25 @@ namespace Assignment1_S19
             AvailbleOptions[4] = "T. printTriangle";
             AvailbleOptions[5] = "F. computeFrequency";
 
-            //Print Menu Options to the user
+            //Print each instance in the arrray on a new line to the user
             foreach (var index in AvailbleOptions)
             {
                 Console.WriteLine("\t"+index + "\t");
             }
             Console.Write("--------------------------------------------\n****Press C to Clear Screen || Q to Quit****\n"); //Allows the user to clear the screen or quit the app
-            Console.ForegroundColor = ConsoleColor.White; //revert color ti white for method operations
+            Console.ForegroundColor = ConsoleColor.White; //revert color to white for method operations
             Console.Write("\nEnter Letter to Pick Selection: "); //Get user input. determines which method to call      
         }
 
-        //Excercise Solutions 1-6
+        //Begining of Excercise Solutions: 1-6
 
-        //printPrimeNumbers
+        //1. printPrimeNumbers
+        //Desciption: This method prints all the prime numbers between x and y
         public static void printPrimeNumbers(int x, int y)
         {
             try
             {
-                int isPrime ;
+                int isPrime ; //to assign 1 if prime and 0 if not a prime number
                 bool xnegative = x < 0; //used to determine if the start number entered by the user is less than 0
                 bool ynegative = y < 0; //used to determine if the end number entered by the user is less than 0
 
@@ -234,15 +259,17 @@ namespace Assignment1_S19
                     Console.Write("***Invalid range detected*** \nPlease Check your input and try again.");
                 }
 
-                else //if no errors then compute the Primes
+                else //if no errors then compute the Primes number determiner
                 {
+                    //outer loop to iterate through the Start and End inputs from the user
                     for (int i = x; i <= y; i++)
                     {
-                        //isprime initializer: all numbers are prime
+                        //isprime initializer: considers all numbers are prime
                         isPrime = 1;
+                        //Inner loop to iterate between from 2 to the variable i above to determine what if the next number prime number
                         for (int j = 2; j < i; j++)
                         {
-                            //not prime numbers if the module of i/2 is 0
+                            //not a prime number if the module of i/2 is 0
                             if (i % j == 0)
                             {
                                 isPrime = 0;
@@ -258,93 +285,103 @@ namespace Assignment1_S19
                     }
                 }
             }
-            catch
+            //display error message if the Prime number can't be computed due to an error from the Try block
+            catch 
             {
                 Console.WriteLine("Exception occured while computing printPrimeNumbers()");
             }
         }
 
-        //getSeriesResult
+        //2. getSeriesResult
+        //Description: This method computes the series of  n!. that is it will calculate the factorial of the number specified by the user
+        //In this method, I used a recursive method to calculate the Factorial. It takes the parameters of n from the user and computes
         public static double getSeriesResult(long n)
         {
-            long product = 1; //variable to calculate the series
+            long zeroFactorial = 1; // holds the return value for 0!
             try
             {
-                //dont calculate for numbers less than 0.
+                //user input must be greater than 0 to calculate series.
                 if (n <0)
                 {
                     Console.Write("\nSorry, your input must be >=0\n");
                     return 0;
                 }
-                else
+                else if(n > 0) //if n>0 then compute the series by using a recursive function
                 {
-                    int[] a = new int[n]; //to hold the iteration. can just change it to n
-
-                    for (int i = 1; i <= a.Length; i++)
-                    {
-                        product = product * i;
-
-                    }
+                  return n*getSeriesResult(n-1);
                 }
             }
+            //display error message if the series cant be computed due to an error from the Try block
             catch
             {
                 Console.WriteLine("Exception occured while computing getSeriesResult()");
             }
 
-            return product; //return the series result
+            return zeroFactorial; //return the factorial of 0 if input is 0
         }
 
-        //decimalToBinary
+        //3. decimalToBinary
+        //This method converts a number from decimal (base 10) to binary (base 2)
         public static long decimalToBinary(long n)
         {
-            string remainder = ""; //to hold the remainders
+            string remainder = ""; //to hold the remainder after dividing by 2
             try
             {
+                //Display error message if the value is n<0
+                if(n<0)
+                {
+                    Console.Write("\n*****Please enter a number greater than or equal to 0 and try again.\n");
+                    return -1; //retrn -1 as a result
+                }
 
+                //If n>=0 then  Do the following actions until the condition in the While block is met 
                 do
                 {
                     remainder = (n % 2) + remainder; //gets the remainder
-                    n /= 2; //gets the quotient
-                    //Console.WriteLine(n);
-                    // Console.WriteLine(remainder);
+                    n /= 2; //get the quotient after each divide
                 }
 
                 while (n > 0); //do until the quotient is 0
-
-                //Console.WriteLine(remainder);
             }
+            //display error message if the decimal number to Binary can't be computed due to an error from the Try block
             catch
             {
                 Console.WriteLine("Exception occured while computing decimalToBinary()");
             }
 
-            return long.Parse(remainder);
+            return long.Parse(remainder); //parse the remainder variable to long and return to the user
         }
 
-        //binaryToDecimal
+        //4. binaryToDecimal
+        //This method converts a number from binary (base 2) to decimal (base 10)
         public static long binaryToDecimal(long n)
         {
+            //declare variables to use
+            //convertedDecimal to hold the final result of the binary conversion
+            //remainder to hold the remainder
             long ConvertedDecimal = 0, i = 0, remainder;
             try
             {
                 
-                //check for invalid binary numbers and return -1
+                //check for invalid binary numbers entered by the user and return defualt if found -1: Invalid binary is any number not in the range 0<=n<=1
                 foreach (char c in n.ToString())
                 {
                     if (c != '0' && c != '1')
                     {
-                        // Console.Write(c); //print the invalid binary numbers
+                        //print the invalid binary numbers detected
+                        // Console.Write(c); 
                         Console.WriteLine("*****Invalid Binary number detected*******");
-                        return -1; 
+                        return -1; //return -1 as a result
                     }
-                    //if valid binary then 
+                    //if valid binary detected then 
                     else
                     {
                     
-                        while (n != 0)
+                        while (n != 0) //while the user input <> 0, do calculate the decimal convertion
                         {
+                            //gets the remainder after deviding the binary by base 10
                             remainder = n % 10;
+                            //get the quotient of the user input after diving by 10
                             n /= 10;
                             ConvertedDecimal += (long)(remainder * Math.Pow(2, i));
                             ++i;
@@ -353,15 +390,17 @@ namespace Assignment1_S19
                     }
                  }
             }
+            //display error message if the binary number to decimal cant be computed due to an error from the Try block
             catch
             {
                 Console.WriteLine("Exception occured while computing binaryToDecimal()");
             }
 
-            return ConvertedDecimal;
+            return ConvertedDecimal; //return the converted binary to decimal number
         }
 
-        //printTriangle
+        //5. printTriangle
+        //This method prints a triangle using * for the lenght the user specifies
         public static void printTriangle(int n)
         {
             try
@@ -371,16 +410,16 @@ namespace Assignment1_S19
                 {
                     Console.WriteLine("\n*****Sorry, triangle size must be between 0<{SIZE}>100.\n");
                 }
-                else
+                else //if above conditions are satisfied then draw the triangle for the length specified by the user
                 {
                     Console.WriteLine();
                     for (int i = 1; i <= n; i++) //Iterates for the number of lines the triangle will use
                     {
-                        for (int j = 1; j <= n - i; j++) //make spaces at the right to make it a perfect triangle. remove the -i to make it a 90* triangle.
+                        for (int j = 1; j <= n - i; j++) //make spaces at the right to make it a perfect triangle. remove the -i to make it a 90*(right) triangle.
                         {
                            Console.Write(" ");
                         }
-                        for (int k = 1; k <= i; k++) //print the triangle using * that is first line will have 1, second line will have 2 and so forth till the nth size
+                        for (int k = 1; k <= i; k++) //print the triangle using * That is, first line will have 1 *, second line will have 2 *'s and so forth till the nth size specified by the user
                         {
                             Console.Write(" *");
                         }
@@ -389,32 +428,37 @@ namespace Assignment1_S19
                     }
                 }
             }
+            //display error message if the Triangle cant be computed due to an error from the Try block
             catch
             {
                 Console.WriteLine("Exception occured while computing printTriangle()");
             }
         }
 
-        //computeFrequency
+        //6. computeFrequency
+        //This method computes the frequency of each element in the array
         public static void computeFrequency(int[] a)
         {
             try
             {
-                //Sort the Array
+                //Sort the Array in Ascending order
                 Array.Sort(a);
-                //Group the array elements
+                //Group the array elements and print each unique and count of the unique
                 foreach (var index in a.GroupBy(x => x))
                 {
-                    //print the array element and count and convert to string
-                    Console.WriteLine($"{index.Key} \t{index.Count()}");
+                        //print the array element and count and convert to string
+                        Console.WriteLine($"{index.Key} \t{index.Count()}");
                 }
             }
+            //display error message if the Frequency cant be computed due to an error from the Try 
             catch
             {
                 Console.WriteLine("Exception occured while computing computeFrequency()");
             }
         }
 
-
+           //The End of Assignment 1
+           //By Richmond Mensah.
+           //Date of Completion: 1/27/19 12:29:33 PM
     }
 }
