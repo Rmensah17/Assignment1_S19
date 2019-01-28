@@ -30,7 +30,7 @@ namespace Assignment1_S19
                 {
                     //variable to draw lines for asthetics only. Reason I created this variable was because I used it multiple times and didnt want to keep drawing it
                     string consolelines = "---------------------------------------------";
-                    //Variable to displat message after each method executon. Was used in a lot of places that's why I created the method.
+                    //Variable to display message after each method executon. Was used in a lot of places that's why I created the method.
                     string CalMessage = "\nEnter Letter to Pick Selection or Press C to clear Screen: ";
 
                     //Determine which method to call based on the user input (The Key the user pressed on the Keyboard)
@@ -43,7 +43,7 @@ namespace Assignment1_S19
                             Console.Write("Enter your Start number: ");
                             //Store the input to the start variable
                             int Start = int.Parse(Console.ReadLine());
-                            //Get the end number from the user
+                            //Get the End number from the user
                             Console.Write("Enter your End number: ");
                             //store the value to the end variable
                             int End = int.Parse(Console.ReadLine());
