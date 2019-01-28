@@ -15,8 +15,8 @@ namespace Assignment1_S19
              binaryToDecimal,printTriangle,and computeFrequency. An Additional method was made to contain the console properties and menu of methods for the user
              to select from.
              
-            Excercise Methods start from line 231
-            Self Reflections start at line 183
+            Excercise Methods start from line 244
+            Self Reflections start at line 184
             Credits: Richmond Mensah
             */
 
@@ -30,6 +30,8 @@ namespace Assignment1_S19
                 {
                     //variable to draw lines for asthetics only. Reason I created this variable was because I used it multiple times and didnt want to keep drawing it
                     string consolelines = "---------------------------------------------";
+                    //Variable to displat message after each method executon. Was used in a lot of places that's why I created the method.
+                    string CalMessage = "\nEnter Letter to Pick Selection or Press C to clear Screen: ";
 
                     //Determine which method to call based on the user input (The Key the user pressed on the Keyboard)
                     switch (Console.ReadKey().Key)
@@ -49,7 +51,7 @@ namespace Assignment1_S19
                             //Call the PrintPrimeNUmber Method and give the parameters the user entered. Output will be displayed to the user
                             printPrimeNumbers(Start, End);
                             Console.Write("\n"+consolelines +"\n");
-                            Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
+                            Console.Write(CalMessage);
                             break;
 
                         //If the user presses S then call the getSeriesResult method.
@@ -65,7 +67,7 @@ namespace Assignment1_S19
                             //Display the result of the method to the user
                             Console.WriteLine("\nThe sum of the series is: " + r1);
                             Console.Write(consolelines + "\n");
-                            Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
+                            Console.Write(CalMessage);
                             break;
 
                         //If the user presses the D then call the decimalToBinary method
@@ -81,7 +83,7 @@ namespace Assignment1_S19
                             //display the result to the user
                             Console.WriteLine("\nBinary conversion of the decimal number " + n2 + " is: " + r2);
                             Console.Write(consolelines + "\n");
-                            Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
+                            Console.Write(CalMessage);
                             break;
 
                         //if the user presses the B button then call the binaryToDecimal method
@@ -97,7 +99,7 @@ namespace Assignment1_S19
                             //display the resul to the user
                             Console.WriteLine("\nDecimal conversion of the binary number " + n3 + " is: " + r3);
                             Console.Write(consolelines + "\n");
-                            Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
+                            Console.Write(CalMessage);
                             break;
 
                         //if the user presses the T button then call the printTriangle method
@@ -111,7 +113,7 @@ namespace Assignment1_S19
                             //call the printtriangle method and draw the triangle to the user
                             printTriangle(n4);
                             Console.Write(consolelines + "\n");
-                            Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
+                            Console.Write(CalMessage);
                             break;
 
                         //if the user presses the F button then call the computeFrequency method
@@ -133,7 +135,7 @@ namespace Assignment1_S19
                             //call the triangle method and draw to the user
                             computeFrequency(arr);
                             Console.Write(consolelines + "\n");
-                            Console.Write("\nEnter Letter to Pick Selection or Press C to clear Screen: ");
+                            Console.Write(CalMessage);
                             break;
 
                         //Go back to Main Menu and clear screen if the user presses the C key
@@ -182,21 +184,23 @@ namespace Assignment1_S19
                 /*
                  * Self Reflections:
                  * Rating (1 - 5): 5
+                 * 
                  * Struggles:
-                 * While some of the method computations were stragihtforward, others were a little challenging.
-                 * My initial struggle was figuring out what logic I needed to use to do the computations. So I had to write some pseudo codes to simplify how I was going to program some of the calculations,
-                 * especially the Binary to decimal, decimal to binary conversions, and the Triangle.
+                 *      While some of the method computations were stragihtforward, others were a little challenging.
+                 *      My initial struggle was figuring out what logic I needed to use to do the computations. So I had to write some pseudo codes to simplify how I was going to program some of the calculations,
+                 *      especially the Binary to decimal, decimal to binary conversions, and the Triangle.
                  * 
                  * What I learned :
-                 * I found the assignment interesting and even started creating other console apps. The Method I liked the most was the Printing of the Triangle . It was amazing how the output looked.
-                 * I also learned a lot about the IDE and developed some familiarity with setting console properties.
-                 * I mostly used C# in my leisure to create Windows Form Application and never thought of creating console apps, but I found it straightforward to create console apps and also started translating some of my GUI apps into console apps.
+                 *      I found the assignment interesting and even started creating other console apps. The Method I liked the most was the Printing of the Triangle . It was amazing how the output looked.
+                 *      I also learned a lot about the IDE and developed some familiarity with setting console properties.
+                 *      I mostly used C# in my leisure to create Windows Form Application and never thought of creating console apps, but I found it straightforward to create console apps and also started 
+                 *      translating some of my GUI apps into console apps.
                  * 
-                 * This is the first time I published code to GitHub and after pushing this code, I was able to push an SSIS package code I have been working on as a leisure project to GitHub.
+                 *      This is the first time I published code to GitHub and after pushing this code, I was able to push an SSIS package code I have been working on as a leisure project to GitHub.
                  * 
                  * Recommendations:
-                 * I know this might be the first assignment, but instead of giving a specific set of functions to create, I think the students should be given the option to come up with an idea and create a function off that.
-                 * That way it engages the student to do some critical thinking to decide what they can do.
+                 *       I know this might be the first assignment, but instead of giving a specific set of functions to create, I think the students should be given the option to come up with an idea and create a function off that.
+                 *      That way it engages the student to do some critical thinking to decide what they can do.
                
                  * 
                  */
@@ -311,7 +315,7 @@ namespace Assignment1_S19
                   return n*getSeriesResult(n-1);
                 }
             }
-            //display error message if the series cant be computed due to an error from the Try block
+            //display error message if the series can't be computed due to an error from the Try block
             catch
             {
                 Console.WriteLine("Exception occured while computing getSeriesResult()");
@@ -363,7 +367,7 @@ namespace Assignment1_S19
             try
             {
                 
-                //check for invalid binary numbers entered by the user and return defualt if found -1: Invalid binary is any number not in the range 0<=n<=1
+                //check for invalid binary numbers entered by the user and return -1 as defualt if found. Invalid binary is any number not in the range 0<=n<=1
                 foreach (char c in n.ToString())
                 {
                     if (c != '0' && c != '1')
@@ -383,6 +387,7 @@ namespace Assignment1_S19
                             remainder = n % 10;
                             //get the quotient of the user input after diving by 10
                             n /= 10;
+                            //Compute the Decimal number
                             ConvertedDecimal += (long)(remainder * Math.Pow(2, i));
                             ++i;
                         }
@@ -408,7 +413,7 @@ namespace Assignment1_S19
                 //Prevent Triangle Size greater than 100
                 if (n > 100 || n<0)
                 {
-                    Console.WriteLine("\n*****Sorry, triangle size must be between 0<{SIZE}>100.\n");
+                    Console.WriteLine("\n*****Sorry, triangle size must be between 0<{SIZE}<=100.\n");
                 }
                 else //if above conditions are satisfied then draw the triangle for the length specified by the user
                 {
@@ -419,7 +424,7 @@ namespace Assignment1_S19
                         {
                            Console.Write(" ");
                         }
-                        for (int k = 1; k <= i; k++) //print the triangle using * That is, first line will have 1 *, second line will have 2 *'s and so forth till the nth size specified by the user
+                        for (int k = 1; k <= i; k++) //print the triangle using *. That is, first line will have 1 *, second line will have 2 *'s and so forth till the nth size specified by the user
                         {
                             Console.Write(" *");
                         }
