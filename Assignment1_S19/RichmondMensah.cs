@@ -30,7 +30,7 @@ namespace Assignment1_S19
                 {
                     //variable to draw lines for asthetics only. Reason I created this variable was because I used it multiple times and didnt want to keep drawing it
                     string consolelines = "---------------------------------------------";
-                    //Variable to display message after each method executon. Was used in a lot of places that's why I created the method.
+                    //Variable to display message after each method execution. Was used in a lot of places that's why I created the variable.
                     string CalMessage = "\nEnter Letter to Pick Selection or Press C to clear Screen: ";
 
                     //Determine which method to call based on the user input (The Key the user pressed on the Keyboard)
